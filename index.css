@@ -1,0 +1,176 @@
+:root {
+  --primary-color: #4a90e2;
+  --primary-hover-color: #357abd;
+  --success-color: #4caf50;
+  --success-hover-color: #45a049;
+  --disabled-color: #cccccc;
+  --background-color: #f4f7f9;
+  --card-background-color: #ffffff;
+  --text-color: #333333;
+  --light-text-color: #777777;
+  --border-color: #dddddd;
+  --error-color: #e74c3c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--card-background-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: var(--light-text-color);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+#drop-zone {
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 3rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+#drop-zone.dragover {
+  border-color: var(--primary-color);
+  background-color: #e9f2ff;
+}
+
+#drop-zone p {
+  margin: 0;
+  color: var(--light-text-color);
+}
+
+#file-input {
+  display: none;
+}
+
+#file-name {
+  margin-top: 1rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  min-height: 24px;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+}
+
+.btn-primary:disabled {
+  background-color: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: var(--success-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+#status {
+  margin-top: 1.5rem;
+  min-height: 24px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--light-text-color);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+#error-message {
+    margin-top: 1.5rem;
+    color: var(--error-color);
+    font-weight: 500;
+    min-height: 24px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .app-container {
+    padding: 1.5rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  #drop-zone {
+    padding: 2rem 1rem;
+  }
+}

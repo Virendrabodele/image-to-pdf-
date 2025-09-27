@@ -1,0 +1,5 @@
+{
+  "name": "Copy of AI PDF to Excel Converter",
+  "description": "An application that uses AI to extract tabular data from PDF files and convert it into a downloadable CSV file compatible with Excel.",
+  "requestFramePermissions": []
+}
